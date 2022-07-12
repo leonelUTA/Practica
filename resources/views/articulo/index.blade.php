@@ -12,8 +12,7 @@
             <th scope="col">Codigo</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Cantidad</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Acciones</th>
+
         </tr>
 
     </thead>
@@ -24,18 +23,7 @@
                 <td>{{ $articulo->codigo }}</td>
                 <td>{{ $articulo->descripcion }}</td>
                 <td>{{ $articulo->cantidad }}</td>
-                <td>{{ $articulo->precio }}</td>
-                <td>
-                    <div class="d-flex">
-                        <a href="/articulos/{{$articulo->id}}/edit" class="btn btn-info mr-2">Editar</a>
-                        
-                        <form action="{{ route('articulos.destroy', $articulo->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger">Eliminar</button>
-                        </form> 
-                    </div>                 
-                </td>
+                
             </tr>
         @endforeach
     </tbody>
